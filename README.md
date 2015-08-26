@@ -1,6 +1,9 @@
 <h1>AV Sidebar Menu Wordpress Plugin<h1>
-<h3>Description</h3>
+<b>Descrizione</b>
 <p>
-Crea un meta-box personalizzabile per ogni pagina/post in cui definire il menu e fornisce un widget per la renderizzazione
-Consente di visualizzare un menu personalizzato come widget all'interno di una sidebar.
+Consente di selezionare un menu, tra quelli personalizzati, per ogni pagina o post da visualizzare come widget all'interno di una sidebar.
+</p>
+<b>Descrizione</b>
+<p>
+Consente di selezionare un menu, tra quelli personalizzati, per ogni pagina o post da visualizzare come widget all'interno di una sidebar.
 </p>
