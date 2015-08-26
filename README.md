@@ -1,7 +1,7 @@
 <h1>AV Sidebar Menu Wordpress Plugin</h1>
 Autori: <br/>
-<em><a href="https://github.com/wevitt">Vittorio Iovinella</a></em>(<a href="mailto:vittorio.iovinella@gmail.com"></a>)<br/>
-<em><a href="https://github.com/andrearosato">Andrea Rosato</a></em>(<a href="mailto:mailbox.rosati@gmail.com"></a>)<br/>
+<em><a href="https://github.com/wevitt">Vittorio Iovinella</a></em>(<a href="mailto:vittorio.iovinella@gmail.com">vittorio.iovinella@gmail.com</a>)<br/>
+<em><a href="https://github.com/andrearosato">Andrea Rosato</a></em>(<a href="mailto:mailbox.rosati@gmail.com">mailto:mailbox.rosati@gmail.com</a>)<br/>
 <b>Descrizione</b>
 <p>
 Consente di selezionare un menu personalizzato, per ogni pagina o post da visualizzare come widget all'interno di una sidebar.
