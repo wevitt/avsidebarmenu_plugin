@@ -5,12 +5,10 @@
     Plugin Name: AV Sidebar Menu
     Plugin URI: http://www.dinamiqa.com/
     Description: Crea un metabox personalizzabile per ogni pagina in cui definire il menu e fornisce un widget per la renderizzazione.
-    Author: Andrea R.
+    Author: Andrea R., Vittorio I.
     Version: 1.0
     Author URI: http://www.dinamiqa.com/
     */
-
-
 
 
     // PLUGIN MAIN CLASS
@@ -27,7 +25,7 @@
 			// add_action( 'save_post', array(__CLASS__, "add_plan_data_to_post"),10,2);
 			add_action( 'widgets_init', array(__CLASS__, 'register_sidebar_menu_widget' ) );
 			add_action("add_meta_boxes", array(__CLASS__, "add_sidebar_menu_metabox") );
-			add_action("save_post", array(__CLASS__, "save_sidebar_menu_metabox", 10, 3) );
+			add_action("save_post", array(__CLASS__, "save_sidebar_menu_metabox"), 10, 3 );
 		}
 
 		public function register_sidebar_menu_widget() {
@@ -40,8 +38,7 @@
 
 		public function save_sidebar_menu_metabox($post_id, $post, $update) {
 
-			print_r($_POST);
-			exit;
+
 
 			 if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
 	        return $post_id;
@@ -52,6 +49,8 @@
 		    if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
 		        return $post_id;
 
+		
+
 		    $meta_box_dropdown_value = "";
 
 
@@ -60,11 +59,12 @@
 		        $meta_box_dropdown_value = $_POST["custom_menu"];
 		    }   
 		    update_post_meta($post_id, "custom_menu", $meta_box_dropdown_value);
-		
 
 		}
 
 		public function sidebar_menu_metabox_markup() {
+			global $post;
+
 			 wp_nonce_field(basename(__FILE__), "meta-box-nonce");
 
 	    //print_r(get_post_meta($object->ID, "custom_menu", true));
@@ -73,9 +73,11 @@
 	    ?>
 	        <div>
 	            <!-- <label for="meta-box-dropdown">Seleziona Menu </label> -->
-	            <select name="custom_menu">
-	                <?php 
 
+<?php 
+
+
+	
                 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 						$menuArray = array('-- Nessun Menu  --');
 
@@ -84,11 +86,18 @@
 						}
 
 
+
+
 	                    $option_values = $menuArray;
+
+?>
+
+	            <select name="custom_menu">
+	                <?php 
 
 	                    foreach($option_values as $key => $value) 
 	                    {
-	                        if($value == get_post_meta($object->ID, "custom_menu", true))
+	                        if($value == get_post_meta($post->ID, "custom_menu", true))
 	                        {
 	                            ?>
 	                                <option selected><?php echo $value; ?></option>
@@ -128,8 +137,6 @@
             // Do nothing
         } // END public static function deactivate
     } // END class main
-
-
 
 
 
@@ -203,8 +210,6 @@
 
 
 
-
-
 	function makeMyMenus() {
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 		global $menuArray;
@@ -216,7 +221,6 @@
 
 		return $menuArray;		
 	}
-
 
 
 
