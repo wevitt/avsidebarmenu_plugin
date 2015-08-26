@@ -1,5 +1,5 @@
 <h1>AV Sidebar Menu Wordpress Plugin</h1>
-Autori: <em><a href="https://github.com/wevitt">Vittorio Iovinella</a></em>,<em><a href="https://github.com/andrearosato">Andrea Rosato</a></em> 
+Autori: <em><a href="https://github.com/wevitt">Vittorio Iovinella</a></em>,<em><a href="https://github.com/andrearosato">Andrea Rosato</a></em> <br/>
 <b>Descrizione</b>
 <p>
 Consente di selezionare un menu personalizzato, per ogni pagina o post da visualizzare come widget all'interno di una sidebar.
