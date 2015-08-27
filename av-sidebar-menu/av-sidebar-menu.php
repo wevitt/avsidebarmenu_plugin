@@ -135,8 +135,8 @@
 			// Instantiate the parent object
 			parent::__construct( 
 				'sidebar-menu', // Base ID
-				__( 'Sidebar Menu', 'sidebar_menu' ), // Name
-				array( 'description' => __( 'Il widget mostra dinamicamente il menu selezionato nel rispettivo metabox della pagina.', 'sidebar_menu' ), ) // Args
+				__( 'AV Sidebar Menu', 'av_sidebar_menu' ), // Name
+				array( 'description' => __( 'Mostra il menu selezionato nell\'appostito box per la pagina o il post.', 'sidebar_menu' ), ) // Args
 			);
 		}
 
@@ -183,7 +183,7 @@
 	        <p><label for="<?php echo $this->get_field_id('sidebar-menu-widget-title');?>">
 	        Titolo: <input class="widefat" id="<?php echo $this->get_field_id('sidebar-menu-widget-title');?>" name="<?php echo $this->get_field_name('sidebar-menu-widget-title');?>" type="text" value="<?php echo $title; ?>" />
 	        </label></p>
-	        <p>Il widget mostra dinamicamente il menu selezionato nel rispettivo metabox della pagina.</p>
+	        <p>Mostra il menu selezionato nell'appostito box per la pagina o il post.</p>
         <?php
     }
 	} // END class widget
