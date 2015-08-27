@@ -4,7 +4,7 @@
     /*
     Plugin Name: AV Sidebar Menu
     Plugin URI: https://github.com/wevitt/avsidebarmenu_plugin
-    Description: Crea un metabox personalizzabile per ogni pagina in cui definire il menu e fornisce un widget per la renderizzazione.
+    Description: Consente di aggiungere un menu personalizzato, ad ogni pagina o post da visualizzare come widget all'interno di una sidebar.
     Author: Andrea Rosati, Vittorio Iovinella
     Version: 1.0
     Author URI: mailbox.rosati@gmail.com, vittorio.iovinella@gmail.com
