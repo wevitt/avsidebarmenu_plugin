@@ -134,7 +134,7 @@
 	    function __construct() {
 			// Instantiate the parent object
 			parent::__construct( 
-				'sidebar-menu', // Base ID
+				'av_sidebar-menu', // Base ID
 				__( 'AV Sidebar Menu', 'sidebar_menu' ), // Name
 				array( 'description' => __( 'Mostra il menu selezionato nell\'appostito box per la pagina o il post.', 'sidebar_menu' ), ) // Args
 			);
