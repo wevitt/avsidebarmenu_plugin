@@ -19,5 +19,5 @@ Consente di aggiungere un menu personalizzato, ad ogni pagina o post da visualiz
 <li>Digitare un nome per il titolo del widget</li>
 </ul>
 <b>Selezione del Menu</b>
-<p>Selezionare il menu dal box laterale</p>
+<p>Seleziona, all'interno della pagina crea/edit il menu da visualizzare dal box nella barra laterale</p>
 
