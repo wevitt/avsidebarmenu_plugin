@@ -5,7 +5,7 @@
 </p>
 <b>Descrizione</b>
 <p>
-Consente di selezionare un menu personalizzato, per ogni pagina o post da visualizzare come widget all'interno di una sidebar.
+Consente di aggiungere un menu personalizzato, ad ogni pagina o post da visualizzare come widget all'interno di una sidebar.
 </p>
 <b>Installazione</b>
 <ul>
