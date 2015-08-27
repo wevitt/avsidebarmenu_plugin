@@ -8,6 +8,8 @@
     Author: Andrea Rosati, Vittorio Iovinella
     Version: 1.0
     Author URI: mailbox.rosati@gmail.com, vittorio.iovinella@gmail.com
+    Licence: GPLv2
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
     */
 
 
