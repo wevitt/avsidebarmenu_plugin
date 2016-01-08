@@ -35,3 +35,13 @@ From create/edit page you can select the custom menu, previously created, to dis
 * Activate the plugin through the 'Plugins' menu in WordPress.
 * Inserte the widget AV Sidebar Menu into sidebar and digit a Title.
 * Select from create/edit page the custom menu to show into sidebar.
+
+== Chengelog ==
+* 08/01/2016
+* Aggiunto supporto per custom types
+* Aggiunto titolo personalizzato per ogni menu
+
+* 01-06-2016
+* Added support for custom types
+* Added custom title for each menu
+
