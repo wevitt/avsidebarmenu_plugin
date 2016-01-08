@@ -15,9 +15,9 @@ Questo plugin permette di selezionare un menu personalizzato per ogni pagina o p
 e mostrarlo come widget all'interno di un sidebar.
 
 Dalla pagina crea/edit è possibile selezionare il menu personalizzato, precedentemente creato,
-da visualizzare all'interno di un widget inserito in una sidebar.
+da visualizzare all'interno di un widget inserito in una sidebar. 
 
-* Widget
+* Widget 
 * Custom Box
 
 From create/edit page you can select the custom menu, previously created, to display in a widget added to a sidebar.

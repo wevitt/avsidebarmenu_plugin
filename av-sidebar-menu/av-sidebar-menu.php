@@ -34,9 +34,15 @@
 		}
     
 		public function add_sidebar_menu_metabox() {
-			add_meta_box("sidebar-menu-meta-box", 'Seleziona Menu', array(__CLASS__, "sidebar_menu_metabox_markup"), "page", "side", "default", null);
-			add_meta_box("sidebar-menu-meta-box", 'Seleziona Menu', array(__CLASS__, "sidebar_menu_metabox_markup"), "post", "side", "default", null);
+			add_meta_box("sidebar-menu-meta-box", __( 'AV Sidebar Menu' ), array(__CLASS__, "sidebar_menu_metabox_markup"), "page", "side", "default", null);
+			add_meta_box("sidebar-menu-meta-box", __( 'AV Sidebar Menu' ), array(__CLASS__, "sidebar_menu_metabox_markup"), "post", "side", "default", null);
+
+			$post_types = get_post_types( array('public' => true, '_builtin' => false), 'names', 'and' ); 
+			foreach ( $post_types  as $post_type ) {
+				add_meta_box("sidebar-menu-meta-box", __( 'AV Sidebar Menu' ), array(__CLASS__, "sidebar_menu_metabox_markup"), $post_type, "side", "default", null);
 			}
+
+		}
 
 		public function save_sidebar_menu_metabox($post_id, $post, $update) {
 			if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
@@ -49,6 +55,7 @@
 		        return $post_id;
 
 		    $meta_box_dropdown_value = "";
+		    $meta_box_title_value = "";
 
 
 		    if(isset($_POST["sidebar-menu-name"]))
@@ -56,18 +63,27 @@
 		        $meta_box_dropdown_value = $_POST["sidebar-menu-name"];
 		    }   
 		    update_post_meta($post_id, "sidebar-menu-name", $meta_box_dropdown_value);
+
+		    if(isset($_POST["sidebar-menu-custom-title"]))
+		    {
+		        $meta_box_title_value = $_POST["sidebar-menu-custom-title"];
+		    }   
+		    update_post_meta($post_id, "sidebar-menu-custom-title", $meta_box_title_value);
 		}
 
 		public function sidebar_menu_metabox_markup() {
 			global $post;
 
 			wp_nonce_field(basename(__FILE__), "meta-box-nonce");
-			echo get_post_meta($object->ID, "sidebar-menu-name", true);
+			//echo get_post_meta($object->ID, "sidebar-menu-name", true);
 
 		    ?>
 
 	        <div>
-
+				<p>
+					<strong><?php echo __( 'Titolo' );?></strong><br/>
+					<input name="sidebar-menu-custom-title" id="sidebar-menu-custom-title" value="<?php echo get_post_meta($post->ID, "sidebar-menu-custom-title", true);?>" type="text">
+				</p>
 				<?php 
 			
 		    		$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
@@ -80,7 +96,8 @@
 		            $option_values = $menuArray;
 
 				?>
-
+				<p>
+				<strong><?php echo __( 'Seleziona Menu' );?></strong><br/>
 	            <select name="sidebar-menu-name">
 	                <?php 
 	                    foreach($option_values as $key => $value) 
@@ -100,7 +117,7 @@
 	                    }
 	                ?>
 	            </select>
-
+				</p>
         	</div>
 
 	    <?php  
@@ -138,7 +155,7 @@
 			parent::__construct( 
 				'av_sidebar-menu', // Base ID
 				__( 'AV Sidebar Menu', 'sidebar_menu' ), // Name
-				array( 'description' => __( 'Mostra il menu selezionato nell\'appostito box per la pagina o il post.', 'sidebar_menu' ), ) // Args
+				array( 'description' => __( 'Mostra il menu selezionato nell\'apposito box per la pagina o il post.', 'sidebar_menu' ), ) // Args
 			);
 		}
 
@@ -164,7 +181,17 @@
 			?>
 
 			<div class="widget">
-				<h3 class="widget-title"><?php echo $instance['sidebar-menu-widget-title']; ?></h3>
+				<h3 class="widget-title">
+					<?php 
+						$pageTitle = get_post_meta($post->ID, 'sidebar-menu-custom-title', true);
+						if($pageTitle && $pageTitle !== ''){
+							echo $pageTitle;
+						} else {
+							echo $instance['sidebar-menu-widget-title'];
+						}
+						 
+					?>
+				</h3>
 				
 
 					<?php
